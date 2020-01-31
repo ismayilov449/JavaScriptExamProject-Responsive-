@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>JavaScript </title>
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot');
+            src: url('fonts/icomoon.eot') format('embedded-opentype'),
+                url('fonts/icomoon.woff') format('woff'),
+                url('fonts/icomoon.ttf') format('truetype'),
+                url('fonts/icomoon.svg') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @media screen and (-webkit-min-device-pixel-ratio:0) {
+            @font-face {
+                font-family: 'icomoon';
+                src: url('fonts/icomoon.svg') format('svg');
+            }
+
+
+        }
+
+
+
+        .icon-team,
+        .icon-blog,
+        .icon-home,
+        .icon-portfolio,
+        .icon-services,
+        .icon-contact,
+        .myIcon-menu {
+            font-family: 'icomoon';
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .icon-team::before {
+            content: "\e000";
+        }
+
+        .icon-blog:before {
+            content: "\e001";
+        }
+
+        .icon-home::before {
+            content: "\e002";
+        }
+
+        .icon-portfolio:before {
+            content: "\e003";
+        }
+
+        .icon-services:before {
+            content: "\e004";
+        }
+
+        .icon-contact:before {
+            content: "\e005";
+        }
+
+        .myIcon-menu:before {
+            content: "\f0c9";
+        }
+
+        #mainDiv {
+            width: 100%;
+            min-width: 300px;
+            height: 1000px;
+
+        }
+
+
+        #mainDiv ul {
+            max-width: 1240px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 1.5em;
+            font-weight: 300;
+        }
+
+        #mainDiv li span {
+            display: block;
+        }
+
+        #mainDiv a {
+            display: block;
+            color: rgba(249, 249, 249, .9);
+            text-decoration: none;
+
+            transition: color .5s, background .5s, height .5s;
+        }
+
+        #mainDiv i {
+            /* Make the font smoother for Chrome */
+            /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+
+            transform: translate3d(0, 0, 0);
+        }
+
+
+
+        @media (min-width: 50em) {
+
+
+            #mainDiv>ul>li {
+                float: left;
+                width: 16.66666666666667%;
+                text-align: center;
+                justify-content: center;
+                height: 9em;
+                transition: .5s, height .5s;
+            }
+
+
+
+            #mainDiv>ul>li>a {
+                display: block;
+                width: auto;
+                height: 9em;
+                color: rgba(249, 249, 249, .9);
+                text-decoration: none;
+            }
+
+            .myIcon {
+                padding-top: 1.4em;
+            }
+
+            .myIcon+span {
+                margin-top: 2.1em;
+                -webkit-transition: margin .5s;
+                -moz-transition: margin .5s;
+                -o-transition: margin .5s;
+                -ms-transition: margin .5s;
+                transition: margin .5s;
+            }
+
+            #mainDiv>ul>li>a>span {
+                text-align: center;
+                display: block;
+                color: white;
+                font-size: 25px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: lighter;
+                transition: margin .5s;
+
+
+            }
+
+            #mainDiv>ul>li>a>span>i {
+
+                display: inline-block;
+                position: relative;
+                padding: 15px;
+                border-radius: 50%;
+                font-size: 1.8em;
+                box-shadow: 0 0 0 30px transparent;
+                background: rgba(255, 255, 255, 0.1);
+                transform: translate3d(0, 0, 0);
+                transition: box-shadow .6s ease-in-out;
+
+            }
+
+            #mainDiv>ul :hover i,
+            #mainDiv>ul :active i,
+            #mainDiv>ul :focus i {
+                box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+
+                transition: box-shadow .4s ease-in-out;
+            }
+        }
+
+        @media (min-width: 50em) and (max-width: 61.250em) {
+
+
+            #mainDiv>ul>li>a>span {
+                font-size: 22px;
+            }
+
+            #mainDiv>ul>li {
+
+                height: 8em;
+
+            }
+
+        }
+
+        @media (min-width:32.5em) and (max-width: 49.999em) {
+
+            #mainDiv li {
+                display: block;
+                float: left;
+                width: 50%;
+            }
+
+            #mainDiv>ul>li>a>span {
+                text-align: center;
+                display: inline-block;
+                color: white;
+                font-size: 25px;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-weight: lighter;
+                transition: margin .5s;
+
+
+            }
+
+            #mainDiv a {
+                padding: 0.8em;
+            }
+
+            #mainDiv li span,
+            #mainDiv li span.myIcon {
+                display: inline-block;
+            }
+
+            #mainDiv li span.myIcon {
+                width: 50%;
+            }
+
+            #mainDiv li .myIcon+span {
+                font-size: 1em;
+            }
+
+            .myIcon+span {
+                position: relative;
+                top: -0.2em;
+            }
+
+            #mainDiv li i {
+                display: inline-block;
+                padding: 8% 9%;
+                border: 4px solid transparent;
+                border-radius: 50%;
+                font-size: 1.5em;
+                background: rgba(255, 255, 255, 0.1);
+
+                transition: border .5s;
+            }
+
+            #mainDiv li:hover i,
+            #mainDiv li:active i,
+            #mainDiv li:focus i {
+
+                border: 4px solid rgba(255, 255, 255, 0.1);
+            }
+
+        }
+
+
+        @media (min-width: 32.5em) and (max-width: 38.688em) {
+
+            #mainDiv>ul>li span.myIcon {
+                width: 50%;
+            }
+
+            #mainDiv>ul>li .myIcon+span {
+                font-size: 0.9em;
+            }
+        }
+
+        #mainDiv .navtoogle {
+            display: none;
+            width: 100%;
+            min-width: 300px;
+            padding: 0.5em 0.5em 0.8em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: normal;
+            text-align: left;
+            color: rgb(7, 16, 15);
+            font-size: 1.2em;
+            background: none;
+            border: none;
+            border-bottom: 4px solid rgb(221, 221, 221);
+            cursor: pointer;
+        }
+
+        .navtoogle i {
+            z-index: -100;
+        }
+
+        .myIcon-menu {
+            position: relative;
+            top: 3px;
+            line-height: 0;
+            font-size: 1.6em;
+
+        }
+
+        @media (min-width:32.5em) and (max-width: 49.938em) {
+
+            #mainDiv li {
+                display: block;
+                float: left;
+                width: 50%;
+            }
+
+            #mainDiv a {
+                padding: 0.8em;
+            }
+
+            #mainDiv li span,
+            #mainDiv li span.myIcon {
+                display: inline-block;
+            }
+
+            #mainDiv li span.myIcon {
+                width: 50%;
+            }
+
+            #mainDiv li .myIcon+span {
+                font-size: 1em;
+            }
+
+            .myIcon+span {
+                position: relative;
+                top: -0.2em;
+            }
+
+            #mainDiv li i {
+                display: inline-block;
+                padding: 8% 9%;
+                border: 4px solid transparent;
+                border-radius: 50%;
+                font-size: 1.5em;
+                background: rgba(255, 255, 255, 0.1);
+                -webkit-transition: border .5s;
+                -moz-transition: border .5s;
+                -o-transition: border .5s;
+                -ms-transition: border .5s;
+                transition: border .5s;
+            }
+
+            #mainDiv li:hover i,
+            #mainDiv li:active i,
+            #mainDiv li:focus i {
+                border: 4px solid rgba(255, 255, 255, 0.1);
+            }
+
+        }
+
+
+        @media (max-width: 32.438em) {
+
+            #mainDiv .navtoogle {
+                margin: 0;
+                display: block;
+            }
+
+
+            #mainDiv ul {
+                max-height: 30em;
+                overflow: hidden;
+            }
+
+            #mainDiv ul {
+                max-height: 0em;
+                overflow: hidden;
+            }
+
+            #mainDiv .active+ul {
+                max-height: 30em;
+                overflow: hidden;
+                -webkit-transition: max-height .4s;
+                -moz-transition: max-height .4s;
+                -o-transition: max-height .4s;
+                -ms-transition: max-height .4s;
+                transition: max-height .4s;
+            }
+
+
+            #mainDiv li span {
+                display: inline-block;
+                height: 100%;
+            }
+
+            #mainDiv a {
+                padding: 0.5em;
+            }
+
+            .myIcon+span {
+                margin-left: 1em;
+                font-size: 0.8em;
+            }
+
+            #mainDiv a {
+                padding: 0.8em;
+            }
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div id="mainDiv">
+
+
+    </div>
+
+
+    <script>
+        let item1 = {
+
+            Title: "Home",
+            BackgroundColor: "rgb(208,101,3)",
+            BorderColor: "rgb(174, 78, 1)",
+            ClassName: "icon-home"
+        };
+        let item2 = {
+
+            Title: "Services",
+            BackgroundColor: "rgb(233,147,26)",
+            BorderColor: "rgb(191, 117, 20)",
+            ClassName: "icon-services"
+        };
+        let item3 = {
+
+            Title: "Portfolio",
+            BackgroundColor: "rgb(22,145,190)",
+            BorderColor: "rgb(12, 110, 149)",
+            ClassName: "icon-portfolio"
+        };
+        let item4 = {
+
+            Title: "Blog",
+            BackgroundColor: "rgb(22,107,162)",
+            BorderColor: "rgb(10, 75, 117)",
+            ClassName: "icon-blog"
+        };
+        let item5 = {
+
+            Title: "Team",
+            BackgroundColor: "rgb(27,54,71)",
+            BorderColor: "rgb(16, 34, 44)",
+            ClassName: "icon-team"
+        };
+        let item6 = {
+
+            Title: "Contact",
+            BackgroundColor: "rgb(21,40,54)",
+            BorderColor: "rgb(9, 18, 25)",
+            ClassName: "icon-contact"
+        };
+
+
+        let menuItems = [item1, item2, item3, item4, item5, item6];
+
+        let code = "";
+
+        let MainDiv = document.getElementById("mainDiv");
+
+        code += "<ul>";
+
+        for (i = 0; i < menuItems.length; i++) {
+
+            code += '<li id=' + menuItems[i].Title + ' style="background-color:' + menuItems[i].BackgroundColor + '"><a href="#" ><span class="myIcon"><i aria-hidden="true" class="' + menuItems[i].ClassName + '"></i></span><span>' + menuItems[i].Title + '</span></a></li>';
+
+        }
+        code += "</ul>";
+
+        MainDiv.innerHTML += code;
+
+
+
+        $(function () {
+            var myWidth = 1000;
+
+
+
+            myWidth = $(window).width();
+
+
+            let clickedCard = "";
+            let hoveredCardBorderColor = "";
+            let counter = 0;
+
+            var changeClass = function (r, className1, className2) {
+                var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+                if (regex.test(r.className)) {
+                    r.className = r.className.replace(regex, ' ' + className2 + ' ');
+                }
+                else {
+                    r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"), ' ' + className1 + ' ');
+                }
+                return r.className;
+            };
+
+            function defaultresize() {
+                if ($(window).width() > 800) {
+
+                    for (i = 0; i < menuItems.length; i++) {
+                        $("li#" + menuItems[i].Title + ">a").css({ 'border-left': '0px solid ' + menuItems[i].BorderColor });
+                        $("li#" + menuItems[i].Title + ">a>span").css({ 'font-size': '25px', "font-family": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" });
+
+
+                        if (menuItems[i].Title != clickedCard) {
+                            $("li#" + menuItems[i].Title).css({ 'height': '9em', 'border-bottom': '0' });
+
+                            $("li#" + menuItems[i].Title + ">a>span").css({ 'border-bottom': '0', 'opacity': '1' });
+                            $("li#" + menuItems[i].Title + ">a>span>i").css({ 'border': '0', 'opacity': '1', 'transition': '0.5s' });
+
+
+                        } else {
+
+                            $("li#" + menuItems[i].Title + ">a>span").css({ 'opacity': '1' });
+                            $("li#" + menuItems[i].Title + ">a>span>i").css({ 'opacity': '1' });
+                            $("li#" + menuItems[i].Title).css({ 'height': '10em', 'opacity': '1', 'border-bottom': '5px solid ' + menuItems[i].BorderColor });
+                        }
+                    }
+                }
+
+
+                if ($(window).width() < 800 && $(window).width() > 520) {
+
+                    for (i = 0; i < menuItems.length; i++) {
+                        $("li#" + menuItems[i].Title).css({ 'height': '110px', 'border-bottom': '0' });
+                        $("li#" + menuItems[i].Title + ">a").css({ 'border-left': '0px solid ' + menuItems[i].BorderColor });
+
+                        if (menuItems[i].Title != clickedCard) {
+
+
+                            $("li#" + menuItems[i].Title + ">a>span").css({ 'opacity': '1', 'transition': '0.5s' });
+                            $("li#" + menuItems[i].Title + ">a>span>i").css({ 'border': '0px solid rgba(255, 255, 255, 0.1)', 'transition': '0.5s' });
+                        } else {
+                            $("li#" + menuItems[i].Title + ">a>span").css({ 'opacity': '1', 'transition': '0.5s' });
+                            $("li#" + menuItems[i].Title + ">a>span>i").css({ 'border': '4px solid rgba(255, 255, 255, 0.1)', 'opacity': '1' });
+                        }
+                    }
+                }
+
+                if ($(window).width() < 520) {
+                    if (counter == 0) {
+                        var menuElements = document.getElementById('mainDiv');
+                        menuElements.insertAdjacentHTML('afterBegin', '<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="myIcon-menu"> </i> Menu</button>');
+                    }
+                    counter++;
+                    document.getElementById('menutoggle').onclick = function () {
+                        changeClass(this, 'navtoogle active', 'navtoogle');
+
+                    }
+
+                    for (i = 0; i < menuItems.length; i++) {
+                        $("li#" + menuItems[i].Title).css({ 'height': '75px', 'border': '0px solid rgba(255, 255, 255, 0.1)' });
+                        $("li#" + menuItems[i].Title + ">a").css({ 'opacity': '1', 'border-left': '8px solid ' + menuItems[i].BorderColor });
+
+                        $("li#" + menuItems[i].Title + ">a>.myIcon").css({ 'font-size': '40px', 'opacity': '1' });
+                        $("li#" + menuItems[i].Title + ">a>span").css({ 'font-size': '30px', 'opacity': '1', "font-family": "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" });
+
+
+                    }
+
+
+
+                }
+
+            }
+
+
+
+
+            $(window).resize(function () {
+                defaultresize();
+            });
+
+
+            defaultresize();
+
+            $(document).ready(function () {
+                $("li").mouseenter(function () {
+
+                    $("body").mouseenter(function (event) {
+
+
+
+                        if (event.target.nodeName == "DIV") {
+
+                            clickedCard = "";
+                            defaultresize();
+                        }
+
+                    });
+
+
+                    if ($(window).width() > 800) {
+
+                        for (i = 0; i < menuItems.length; i++) {
+                            if (menuItems[i].Title != clickedCard) {
+
+                                $("li#" + menuItems[i].Title).css({ 'height': '9em', 'border-bottom': '0' });
+                                $("li#" + menuItems[i].Title + ">a>span").css({ 'border-bottom': '0', 'opacity': '1' });
+
+                            }
+
+
+                            if (menuItems[i].Title != this.id) {
+                                $("li#" + menuItems[i].Title + ">a>span").css({ 'border-bottom': '0', 'opacity': '0.5' });
+
+                            } else {
+                                $("li#" + menuItems[i].Title + ">a>span").css({ 'border-bottom': '0', 'opacity': '1' });
+
+
+                            }
+                        }
+
+                        for (i = 0; i < menuItems.length; i++) {
+
+                            if (this.id == menuItems[i].Title) {
+                                hoveredCardBorderColor = menuItems[i].BorderColor;
+                            }
+
+                        }
+
+
+                        $(this).css({ 'height': '10em', 'border-bottom': '5px solid ' + hoveredCardBorderColor });
+                    } else if ($(window).width() < 800 && $(window).width() > 520) {
+
+                        for (i = 0; i < menuItems.length; i++) {
+                            if (menuItems[i].Title != clickedCard) {
+
+
+                                $("li#" + menuItems[i].Title + ">a>span").css({ 'border-bottom': '0', 'opacity': '1' });
+                                $("li#" + menuItems[i].Title + ">a>span>i").css({ 'border': '0px solid rgba(255, 255, 255, 0.1)', 'transition': '0.5s' });
+                            }
+
+
+                            if (menuItems[i].Title != this.id) {
+                                $("li#" + menuItems[i].Title + ">a>span").css({ 'border-bottom': '0', 'opacity': '0.5' });
+
+                            } else {
+                                $("li#" + menuItems[i].Title + ">a>span").css({ 'border-bottom': '0', 'opacity': '1' });
+                                $("li#" + menuItems[i].Title + ">a>span>i").css({ 'border': '4px solid rgba(255, 255, 255, 0.1)' });
+
+                            }
+                        }
+
+                    } else if ($(window).width() < 520) {
+
+                        for (i = 0; i < menuItems.length; i++) {
+
+                            if (menuItems[i].Title != this.id) {
+                                $("li#" + menuItems[i].Title + ">a>span").css({ 'border': '0px', 'opacity': '0.5', 'transition': '0.5s' });
+
+                            } else {
+                                $("li#" + menuItems[i].Title + ">a>span").css({ 'border': '0px', 'opacity': '1', 'transition': '0.5s' });
+
+                            }
+
+
+                        }
+
+
+                    }
+
+                });
+
+                $("li").mouseleave(function () {
+
+
+
+                    if ($(window).width() > 800) {
+
+                        for (i = 0; i < menuItems.length; i++) {
+                            if (menuItems[i].Title != clickedCard) {
+                                $("li#" + menuItems[i].Title).css({ 'opacity': '1', 'height': '9em', 'border-bottom': '0' });
+                                $("li#" + menuItems[i].Title + ">a>span").css({ 'opacity': '1', 'transition': '0.5s' });
+                            } else $("li#" + menuItems[i].Title + ">a>span").css({ 'opacity': '1', 'transition': '0.5s' });
+                        }
+                    }
+                    if ($(window).width() < 800 && $(window).width() > 520) {
+                        for (i = 0; i < menuItems.length; i++) {
+                            if (menuItems[i].Title != clickedCard) {
+                                $("li#" + menuItems[i].Title).css({ 'opacity': '1', 'height': '110px', 'border-bottom': '0' });
+                                $("li#" + menuItems[i].Title + ">a>span").css({ 'opacity': '1', 'transition': '0.5s' });
+                                $("li#" + menuItems[i].Title + ">a>span>i").css({ 'opacity': '1', 'border': '0px solid rgba(255, 255, 255, 0.1)', 'transition': '0.5s' });
+                            } else $("li#" + menuItems[i].Title + ">a>span").css({ 'opacity': '1', 'transition': '0.5s' });
+                        }
+                    } else if ($(window).width() < 520) {
+
+                        for (i = 0; i < menuItems.length; i++) {
+
+
+                            for (i = 0; i < menuItems.length; i++) {
+
+                                if (menuItems[i].Title != this.id) {
+                                    $("li#" + menuItems[i].Title + ">a>span").css({ 'border': '0', 'opacity': '0.5', 'transition': '0.5s' });
+
+                                } else {
+                                    $("li#" + menuItems[i].Title + ">a>span").css({ 'border': '0', 'opacity': '1', 'transition': '0.5s' });
+
+                                }
+
+
+                            }
+
+
+                        }
+
+                    }
+
+
+                });
+            });
+
+            $(document).ready(function () {
+                $("li").click(function () {
+
+                    if ($(window).width() > 800) {
+
+                        for (i = 0; i < menuItems.length; i++) {
+                            $("li#" + menuItems[i].Title).css({ 'height': '9em', 'border-bottom': '0' });
+
+                        }
+
+                        clickedCard = this.id;
+
+                        for (i = 0; i < menuItems.length; i++) {
+
+                            if (this.id == menuItems[i].Title) {
+                                hoveredCardBorderColor = menuItems[i].BorderColor;
+                            }
+
+                        }
+
+                        $(this).css({ 'height': '10em', 'border-bottom': '5px solid ' + hoveredCardBorderColor });
+                    } else if ($(window).width() < 800 && $(window).width() > 520) {
+                        for (i = 0; i < menuItems.length; i++) {
+                            $("li#" + menuItems[i].Title).css({ 'height': '110px', 'border-bottom': '0', 'border': '0px solid rgba(255, 255, 255, 0.1)', 'transition': '0.5s' });
+
+                        }
+
+                        clickedCard = this.id;
+                        defaultresize();
+
+                        for (i = 0; i < menuItems.length; i++) {
+
+                            if (this.id == menuItems[i].Title) {
+                                $("li#" + menuItems[i].Title + ">a>span>i").css({ 'border': '4px solid rgba(255, 255, 255, 0.1)' });
+                            } else {
+                                $("li#" + menuItems[i].Title + ">a>span").css({ 'opacity': '0.5' });
+                            }
+
+                        }
+
+
+
+                    } else if ($(window).width() < 520) {
+
+                        document.getElementById('menutoggle').onclick = function () {
+                            changeClass(this, 'navtoogle', 'navtoogle  active');
+
+                        }
+                    }
+
+
+                });
+            });
+
+            $(document).ready(function () {
+                $("body").click(function (event) {
+
+
+
+                    if (event.target.nodeName == "DIV") {
+
+                        clickedCard = "";
+                        defaultresize();
+                    }
+
+                });
+            });
+
+        });
+
+
+    </script>
+</body>
+
+</html>
